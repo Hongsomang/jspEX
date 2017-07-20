@@ -1,0 +1,17 @@
+element.style{
+	display:flex;
+}
+*{
+	
+	box-sixing: border-box;
+}
+*{
+	outlin:red;
+}
+.app{
+	display:flex;
+}
+.app{
+	display: -webkit-flex;
+	display: flex;
+}

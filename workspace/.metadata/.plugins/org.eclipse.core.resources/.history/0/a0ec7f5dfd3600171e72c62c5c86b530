@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%
+ String such =request.getParameter("such");
+ if(such.equals("naver")){
+ %>
+	 <jsp:forward page="https://www.naver.com">
+<% }
+ else if(such.equals("daum")){
+	 %>
+	 <jsp:forward page="http://www.daum.net/">
+<% 
+ }
+ else if(such.equals("nate")){
+	 %>
+	 <jsp:forward page="http://www.nate.com/">
+<% 
+ }
+ else if(such.equals("google")){
+	 %>
+	 <jsp:forward page="https://www.google.co.kr/?gfe_rd=cr&ei=14oVWe7cDJH-8weU_pbICQ">
+	 <% 
+ }
+%>	 
+ 
+ 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="c=Content-Type" content="text/html" charset="EUC-KR">
+<title>로그인 페이지</title>
+<script>
+function logging(){
+	if(document.loginForm.user_id.value==" ")alert("아이디를 입력해주세요.");
+	else if(document.loginForm.pwd.value==" ")alert("비밀번호를 입력해주세요");
+	else document.loginForm.submit();
+}
+</script>
+</head>
+<body>
+<form name="loginForm" method="post" action="login.jsp">
+<h3>로그인</h3>
+<table border=2>
+<tr>
+<td>아이디</td>
+<td><input type="text" name="id"></input></td>
+</tr>
+<tr>
+<td>비밀번호</td>
+<td><input type="password" name="pwd"></input></td>
+</tr>
+<td clospan="2" align="center">
+<input type="button"  onClick="javas-ript:logging()">로그인</input> <!--onClick에 메인페이지 넣어줘야됨  -->
+<input type="button" onClick="join.jsp">회원가입</input>
+</td>
+</table>
+</form>
+</body>
+</html>

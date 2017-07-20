@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	import="java.sql.*"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+	request.setCharacterEncoding("utf-8");
+	PreparedStatement stmt = null;
+%>
+<table border="1">
+	<tr>
+		<td>아이디</td>
+		<td>비번</td>
+		<td>이름</td>
+		<td>학번
+	</tr>
+	</tr>
+	<%
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			//String DB_URL = "jdbc:mysql://localhost:3306/login?useUnicode=true&characterEncoding=utf8";
+			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/login", "jspuser", "1111");
+			String query = "SELECT * from index_data";
+			stmt = con.prepareStatement(query);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+	%><tr>
+		<td><%=rs.getString("user_id")%></td>
+		<td><%=rs.getString("pwd")%></td>
+		<td><%=rs.getString("name")%></td>
+		<td><%=rs.getString("stu_code")%></td>
+	</tr>
+	<%
+		}
+	%>
+</table>
+<%
+	rs.close();
+		stmt.close();
+		con.close();
+
+	} catch (Exception e) {
+		System.out.println(e);
+	}
+%>
